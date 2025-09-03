@@ -1,6 +1,6 @@
 # Ansible_Final_Task
 
-## Task 1
+## [Task 1](https://github.com/Hassan-Ali-Salama/Ansible_Final_Task/tree/Task1)
 
 ### First image: After successful run without applying Ansible role
 ![First Run Without Role](screenshot/task1/10.png)
@@ -12,7 +12,7 @@
 ![After Applying Role](screenshot/task1/100.png)
 
 
-## Task 2
+## [Task 2](https://github.com/Hassan-Ali-Salama/Ansible_Final_Task/tree/Task2)
 
 ### First image: After successful run without applying Ansible role
 ![First Run Without Role](screenshot/task2/100.png)
