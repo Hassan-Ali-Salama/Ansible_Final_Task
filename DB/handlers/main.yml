@@ -1,0 +1,12 @@
+#SPDX-License-Identifier: MIT-0
+---
+# handlers file for DB
+  - name: Set root password
+    mysql_user:
+      name: root
+      host_all: yes
+      check_implicit_admin: yes
+      password: "{{ root_password }}"
+      login_unix_socket: /var/run/mysqld/mysqld.sock
+      state: present
+      plugin: 'mysql_native_password'

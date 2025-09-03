@@ -1,0 +1,27 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for DB
+
+    - name: Install MariaDB server and Python dependency
+      apt:
+        name:
+          - mariadb-server
+          - python3-mysqldb
+        state: present
+        update_cache: yes
+      notify: Set root password
+      
+    - name: Ensure mariadb is running
+      service:
+        name: mariadb
+        state: started
+        enabled: yes
+      
+      
+    - name: Create database
+      mysql_db:
+        name: "{{ db_name }}"
+        state: present
+        login_user: "root"
+        login_password: "{{ root_password }}"
+

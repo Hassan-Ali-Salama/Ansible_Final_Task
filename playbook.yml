@@ -1,0 +1,7 @@
+- name: Install MariaDB and create a database
+  hosts: host1
+  become: yes
+  vars_files:
+    - secret.yml
+  roles:
+    - DB
