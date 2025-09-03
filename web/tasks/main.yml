@@ -1,0 +1,32 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for web
+
+    - name: install Nginx
+      apt:
+        name: nginx
+        state: present
+    
+    - name: start Nginx
+      service: 
+        name: nginx 
+        state: started
+        enabled: yes
+
+    - name: change index.html
+      template:
+        src: files/index.html.j2
+        dest: /usr/share/nginx/html/index.html
+        owner: root
+        group: root
+        mode: "0644"
+      notify: restart
+
+    - name: change port to 90
+      template:
+        src: files/default.j2
+        dest: /etc/nginx/sites-available/default
+        owner: root
+        group: root
+        mode: "0644"
+      notify: restart

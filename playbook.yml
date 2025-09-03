@@ -1,0 +1,11 @@
+- name: install Nginx and change index & port
+  hosts: host1
+  become: yes
+  vars_files:
+    - secret.yml
+  roles:
+    - web
+  
+
+    
+
